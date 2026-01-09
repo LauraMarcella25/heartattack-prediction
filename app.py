@@ -195,12 +195,12 @@ def predict_page():
         cp = st.selectbox("Tipe Nyeri Dada", [0,1,2,3])
         trestbps = st.number_input("Tekanan Darah", 80, 200)
         chol = st.number_input("Kolesterol", 100, 600)
-        fbs = st.selectbox("Gula Darah > 120", [0,1])
+        fbs = st.number_input("Gula Darah", 120, 1000)
 
     with c2:
         restecg = st.selectbox("ECG", [0,1,2])
         thalach = st.number_input("Detak Maks", 60, 220)
-        exang = st.selectbox("Nyeri Olahraga", [0,1])
+        exang = st.selectbox("Nyeri saat Olahraga", [tidak,iya])
         oldpeak = st.number_input("Oldpeak", 0.0, 6.0)
         slope = st.selectbox("Slope", [0,1,2])
         ca = st.selectbox("Pembuluh", [0,1,2,3,4])
@@ -208,10 +208,10 @@ def predict_page():
     with c3:
         thal = st.selectbox("Thal", [0,1,2,3])
         bmi = st.number_input("BMI", 10.0, 50.0)
-        smoking = st.selectbox("Merokok", [0,1])
-        alcohol = st.selectbox("Alkohol", [0,1])
-        exercise = st.selectbox("Olahraga", [0,1])
-        diabetes = st.selectbox("Diabetes", [0,1])
+        smoking = st.selectbox("Apakah anda Merokok?", [tidak,iya])
+        alcohol = st.selectbox("Apakah anda Alkohol?", [tidak,iya])
+        exercise = st.selectbox("Apakah anda Olahraga?", [tidak,iya])
+        diabetes = st.selectbox("Apakah anda Diabetes?", [tidak,iya])
 
     if st.button("Analisis Risiko"):
         # Simpan input data ke session state agar bisa dibaca di halaman result
