@@ -190,45 +190,47 @@ def predict_page():
     c1, c2, c3 = st.columns(3)
 
     with c1:
-    age = st.number_input("Usia", 1, 120)
+        age = st.number_input("Usia", 1, 120)
 
-    sex = st.selectbox("Jenis Kelamin", ["Laki-laki", "Perempuan"])
-    sex = 1 if sex == "Laki-laki" else 0
+        sex = st.selectbox("Jenis Kelamin", ["Laki-laki", "Perempuan"])
+        sex = 1 if sex == "Laki-laki" else 0
 
-    cp = st.selectbox("Tipe Nyeri Dada", [0, 1, 2, 3])
-    trestbps = st.number_input("Tekanan Darah", 80, 200)
-    chol = st.number_input("Kolesterol", 100, 600)
-    fbs = st.selectbox("Gula Darah > 120", ["Tidak", "Iya"])
-    fbs = 1 if fbs == "Iya" else 0
+        cp = st.selectbox("Tipe Nyeri Dada", [0, 1, 2, 3])
+        trestbps = st.number_input("Tekanan Darah", 80, 200)
+        chol = st.number_input("Kolesterol", 100, 600)
+        fbs = st.selectbox("Gula Darah > 120", ["Tidak", "Iya"])
+        fbs = 1 if fbs == "Iya" else 0
 
 
     with c2:
-    restecg = st.selectbox("ECG", [0, 1, 2])
-    thalach = st.number_input("Detak Maks", 60, 220)
+        restecg = st.selectbox("ECG", [0, 1, 2])
+        thalach = st.number_input("Detak Maks", 60, 220)
 
-    exang = st.selectbox("Nyeri saat Olahraga", ["Tidak", "Iya"])
-    exang = 1 if exang == "Iya" else 0
+        exang = st.selectbox("Nyeri saat Olahraga", ["Tidak", "Iya"])
+        exang = 1 if exang == "Iya" else 0
 
-    oldpeak = st.number_input("Oldpeak", 0.0, 6.0)
-    slope = st.selectbox("Slope", [0, 1, 2])
-    ca = st.selectbox("Pembuluh", [0, 1, 2, 3, 4])
+        oldpeak = st.number_input("Oldpeak", 0.0, 6.0)
+        slope = st.selectbox("Slope", [0, 1, 2])
+        ca = st.selectbox("Pembuluh", [0, 1, 2, 3, 4])
 
 
     with c3:
-    thal = st.selectbox("Thal", [0, 1, 2, 3])
-    bmi = st.number_input("BMI", 10.0, 50.0)
+        thal = st.selectbox("Thal", [0, 1, 2, 3])
+        bmi = st.number_input("BMI", 10.0, 50.0)
 
-    smoking = st.selectbox("Apakah Anda Merokok?", ["Tidak", "Iya"])
-    smoking = 1 if smoking == "Iya" else 0
 
-    alcohol = st.selectbox("Apakah Anda Konsumsi Alkohol?", ["Tidak", "Iya"])
-    alcohol = 1 if alcohol == "Iya" else 0
 
-    exercise = st.selectbox("Apakah Anda Olahraga Rutin?", ["Tidak", "Iya"])
-    exercise = 1 if exercise == "Iya" else 0
+        smoking = st.selectbox("Apakah Anda Merokok?", ["Tidak", "Iya"])
+        smoking = 1 if smoking == "Iya" else 0
 
-    diabetes = st.selectbox("Apakah Anda Diabetes?", ["Tidak", "Iya"])
-    diabetes = 1 if diabetes == "Iya" else 0
+        alcohol = st.selectbox("Apakah Anda Konsumsi Alkohol?", ["Tidak", "Iya"])
+        alcohol = 1 if alcohol == "Iya" else 0
+
+        exercise = st.selectbox("Apakah Anda Olahraga Rutin?", ["Tidak", "Iya"])
+        exercise = 1 if exercise == "Iya" else 0
+
+        diabetes = st.selectbox("Apakah Anda Diabetes?", ["Tidak", "Iya"])
+        diabetes = 1 if diabetes == "Iya" else 0
 
 
     if st.button("Analisis Risiko"):
